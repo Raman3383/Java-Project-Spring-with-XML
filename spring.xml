@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- bean definitions here -->
+
+    <bean id="BatsmanBean" class="org.example.Batsman">
+        <constructor-arg type="String" value="Sachin"/>
+        <constructor-arg name="numberOfMatches" value="234"/>
+        <constructor-arg name="age" value="55"/>
+        <constructor-arg ref="coachBean" type="Coach"/>
+    </bean>
+
+
+    <bean id="BowlerBean" class="org.example.Bowler">
+        <constructor-arg name="name" value="Harbhajan Singh"/>
+        <constructor-arg ref="coachBean" type="Coach"/>
+        <constructor-arg type="int" value="6890"/>
+    </bean>
+    <bean id="coachBean" class="org.example.Coach">
+        <property name="coachName" value="Kapil Dev"/>
+    </bean>
+</beans>
